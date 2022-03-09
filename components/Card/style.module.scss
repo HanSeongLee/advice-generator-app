@@ -1,0 +1,44 @@
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+  max-width: 343px;
+  text-align: center;
+  background: #313A48;
+  box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
+  border-radius: 10px;
+  padding: 40px 24px 64px;
+
+  .subtitle {
+    font-weight: 800;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 3.5px;
+    color: #53FFAA;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.25px;
+    color: #CEE3E9;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: #53FFAA;
+    border: none;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(50%);
+  }
+}
