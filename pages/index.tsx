@@ -1,5 +1,7 @@
-import type { NextPage } from 'next'
+import type {NextPage} from 'next'
 import Head from 'next/head';
+import Container from "../components/Container";
+import AdviceContainer from "../containers/AdviceContainer";
 
 const Home: NextPage = () => {
   return (
@@ -54,6 +56,9 @@ const Home: NextPage = () => {
         </Head>
 
         <main>
+          <Container>
+            <AdviceContainer />
+          </Container>
         </main>
       </>
   );
