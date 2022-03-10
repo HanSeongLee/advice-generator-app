@@ -14,7 +14,7 @@
 
   @include media(">desktop") {
     max-width: 540px;
-    padding: 48px 48px 72px;
+    padding: 48px 48px 66px;
   }
 
   @keyframes rotate {
@@ -99,8 +99,6 @@
     border-radius: 50%;
     cursor: pointer;
     transform: translateX(-50%) translateY(50%);
-
-
 
     @include media(">desktop") {
       transition: box-shadow 0.3s;
