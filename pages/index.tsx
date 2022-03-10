@@ -1,4 +1,5 @@
 import type {NextPage} from 'next'
+import styles from './style.module.scss';
 import Head from 'next/head';
 import Container from "../components/Container";
 import AdviceContainer from "../containers/AdviceContainer";
@@ -57,6 +58,9 @@ const Home: NextPage = () => {
 
         <main>
           <Container>
+            <h1 className={styles.hidden}>
+              Advice Generator App
+            </h1>
             <AdviceContainer />
           </Container>
         </main>
