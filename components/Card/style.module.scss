@@ -1,15 +1,55 @@
+@import "styles/utils";
 
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  grid-gap: 24px;
   max-width: 343px;
+  max-height: 500px;
   text-align: center;
   background: #313A48;
   box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
   border-radius: 10px;
   padding: 40px 24px 64px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+
+  @include media(">desktop") {
+    max-width: 540px;
+    padding: 48px 48px 72px;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translateX(-50%) translateY(50%) rotate(0);
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(50%) rotate(180deg);
+    }
+
+    100% {
+      transform: translateX(-50%) translateY(50%) rotate(360deg);
+    }
+  }
+
+  &.loading {
+    max-height: 142.5px;
+
+    @include media(">desktop") {
+      max-height: 158.5px;
+    }
+
+    button {
+      animation: rotate 1s both infinite;
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
+    transition: max-height 1s;
+    overflow: hidden;
+  }
 
   .subtitle {
     font-weight: 800;
@@ -17,6 +57,12 @@
     line-height: 15px;
     letter-spacing: 3.5px;
     color: #53FFAA;
+
+    @include media(">desktop") {
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 4px;
+    }
   }
 
   .title {
@@ -25,12 +71,24 @@
     line-height: 33px;
     letter-spacing: -0.25px;
     color: #CEE3E9;
+
+    @include media(">desktop") {
+      font-size: 28px;
+      line-height: 38px;
+      letter-spacing: -0.3px;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 64px;
+    height: 64px;
   }
 
   .button {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +97,17 @@
     background: #53FFAA;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
     transform: translateX(-50%) translateY(50%);
+
+
+
+    @include media(">desktop") {
+      transition: box-shadow 0.3s;
+
+      &:hover {
+        box-shadow: 0px 0px 40px #53FFAA;
+      }
+    }
   }
 }
